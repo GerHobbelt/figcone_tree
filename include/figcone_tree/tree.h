@@ -3,7 +3,7 @@
 
 #include "errors.h"
 #include "streamposition.h"
-#include "detail/external/sfun/optional_ref.h"
+#include "sfun/optional_ref.h"
 #include <algorithm>
 #include <map>
 #include <memory>
@@ -159,7 +159,7 @@ public:
 
     class Item {
     public:
-        Item(tree::sfun::optional_ref<std::vector<std::unique_ptr<TreeNode>>> nodeList = std::nullopt)
+        Item(sfun::optional_ref<std::vector<std::unique_ptr<TreeNode>>> nodeList = std::nullopt)
             : nodeList_{nodeList}
         {
         }
@@ -336,7 +336,7 @@ public:
     private:
         std::map<std::string, TreeParam> params_;
         std::map<std::string, TreeNode> nodes_;
-        tree::sfun::member<tree::sfun::optional_ref<std::vector<std::unique_ptr<TreeNode>>>> nodeList_;
+        sfun::member<sfun::optional_ref<std::vector<std::unique_ptr<TreeNode>>>> nodeList_;
     };
 
 public:
